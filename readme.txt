@@ -1,0 +1,9 @@
+一、项目配置
+本demo以thinkphp5.0为框架，
+将目录文件上传到你空间，public为网站根目录
+数据库配置文件在application目录下的database.php来配置你的MySQL数据库信息
+根目录下的party.sql为数据库文件
+
+二、登录测试
+测试用户名test01,密码123456
+也可自行注册

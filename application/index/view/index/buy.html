@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购买结果</title>
+</head>
+<body>
+<h3>购买成功</h3>
+<a href="{:url('index/index')}">返回首页</a><br/>
+您购买的票数是【{$num}】张，座位号分别是：<br/>
+{volist name="ticket" id="vo"}
+{$area[$vo.area]}区{$vo.row+1}排{$vo.seat+1}号<br/>
+{/volist}
+</body>
+</html>

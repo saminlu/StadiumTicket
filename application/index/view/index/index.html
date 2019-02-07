@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购票系统</title>
+
+    <script src="__JS__/jquery-3.3.1.min.js"></script>
+    <script src="__JS__/payfor.js"></script>
+    <link href="__CSS__/style.css" rel="stylesheet">
+</head>
+<body>
+<h1 style="text-align: center;margin-top: 20px;">购票系统</h1>
+<div style="margin-left: 50px;">
+{if $user} 欢迎您，{$user.username}|<a href="{:url('user/logout')}">登出</a>
+{else/}
+<a href="{:url('user/login')}">登录</a>|<a href="{:url('user/reg')}">注册</a>
+{/if}
+</div>
+<div style="margin-top: 20px;">
+    <div id="">
+    <img src="__STATIC__/images/stage.png">
+    </div>
+    <form action="{:url('index/buy')}" method="post">
+    <div class="p_number">
+
+        <div style="height:36px;font-size:16px;">购买数量（每人单次最多购买5张）：</div>
+
+        <div class="f_l add_chose">
+            <a class="reduce" onClick="setAmount.reduce('#qty_item_1')" href="javascript:void(0)">
+                -</a>
+            <input type="text" name="num" value="1" id="qty_item_1" onKeyUp="setAmount.modify('#qty_item_1')" class="text" />
+            <a class="add" onClick="setAmount.add('#qty_item_1')" href="javascript:void(0)">
+                +</a>
+        </div><span>余票：{$seatNum}</span>
+        <div class="tb-btn-buy">
+
+            {if $seatNum>0}
+            <input type="submit" value="立即购买"  class="J_LinkBuy">
+            {else/}
+            <input type="button" value="已售罄"  class="J_LinkBuy">
+            {/if}
+        </div>
+    </form>
+    </div>
+
+</body>
+</html>
